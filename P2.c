@@ -1,9 +1,24 @@
-#include<stdio.h>
-#include<conio.h>
-void main()
+
+int main()
 {
-    int a,b,c;
-    printf("Enter the values for a,b and c:\n");
-    scanf("%d%d%d", &a,&b,&c);
-    printf("The entered values of a,b and c are: %d,%d,%d",a,b,c);
+    int n, *ptr;
+    printf("Enter the value of n:\n");
+    scanf("%d", &n);
+    printf("n = %d\n", n);
+    ptr = (int*)malloc(n * sizeof(int));
+    if (ptr == NULL) {
+        printf("Memory allocation failed\n");
+        return 1;
+    }
+    for(int i=0; i<n; i++)
+    {
+        scanf("%d", (ptr + i));
+    }
+    // Optionally print elements to check:
+    for(int i=0; i<n; i++)
+    {
+        printf("%d ", *(ptr + i));
+    }
+    free(ptr); // Always free allocated memory
+    return 0;
 }

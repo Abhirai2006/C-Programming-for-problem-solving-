@@ -1,22 +1,12 @@
-#include <stdio.h>
-
-int main() {
-    char str[] = "Hello";  // Compiler adds '\0' automatically
-
-    // Print the string normally
-    printf("String: %s\n", str);
-
-    // Show each character, including the null terminator
-    printf("Characters in str (with ASCII values):\n");
-    for (int i = 0; i < 6; i++) {  // 5 characters + null terminator
-        if (str[i] == '\0') {
-            printf("'\\0' (ASCII: %d)\n", str[i]);
-        } else {
-            printf("'%c' (ASCII: %d)\n", str[i], str[i]);
-        }
-    }
-
-
-
-    return 0;
+#include<stdio.h>
+#define N 1009
+const int a = 100;
+void main()
+{
+    printf("Constant variable a = %d\n",a);
+    int a = 30;
+    printf("Local variable a = %d\n",a);
+    printf("Defined variable N = %d\n",N);
+    a = 40;
+    printf("Local variable a = %d\n",a);
 }

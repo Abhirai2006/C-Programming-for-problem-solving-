@@ -1,53 +1,60 @@
-#include <stdio.h>
+#include<stdio.h>
+void main()
+{
+    printf("-----Options are as follows-----\n");
+    printf("1)for-loop\n2)while loop\n3)do-while loop\n");
+    int option;
+    printf("Enter the option(1 or 2 or 3):");
+    scanf("%d",&option);
+    switch(option)
+    {
+    case 1:
+        printf("YOU HAVE CHOSEN FOR LOOP\n");
+        int a;
+        printf("Enter the value of a:");
+        scanf("%d",&a);
+        for(int i=0; i<a; i++)
+            printf("%d ",i+1);
+        break;
 
-// Macro constant (symbolic constant)
-#define PI 3.14159
+    case 2:
+        printf("YOU HAVE CHOSEN WHILE LOOP\n");
+        int n,count = 0;
+        printf("Enter the value of n:");
+        scanf("%d",&n);
+        int temp = n;
+        while(n!=0)
+        {
+            n = n/10;
+            count++;
+        }
+        printf("The number of digits in %d is %d.",temp,count);
+        break;
 
-int main() {
-    // Integer constants
-    const int intConst = 17;            // Decimal constant
-    const int hexConst = 0x11;           // Hexadecimal constant
-    const int octConst = 017;            // Octal constant
-/*
-    // Floating-point constants
-    const float floatConst = 3.14f;
-    const double doubleConst = 2.71828;
+    case 3:
+    {
+        printf("YOU HAVE CHOSEN DO-WHILE LOOP\n");
+        int rows, cols;
+        printf("Enter the number of rows and columns: ");
+        scanf("%d %d", &rows, &cols);
+        int i = 0;
+        do
+        {
+            int j = 0;
+            do
+            {
+                printf("* ");
+                j++;
+            }
+            while (j < cols);
+            printf("\n");
+            i++;
+        }
+        while (i < rows);
+        break;
+    }
 
-    // Character constants
-    const char charConst = 'A';
-    const char escapeConst = '\n';       // Escape sequence constant (newline)
-
-    // String constant
-    const char *stringConst = "Hello, World!";
-
-    // Enumeration constant
-    enum days { SUNDAY, MONDAY, TUESDAY };
-    const int today = MONDAY;
-
-
-    printf("\nFloating-point constants:\n");
-    printf("Float: %f\n", floatConst);
-    printf("Double: %lf\n", doubleConst);
-
-    printf("\nCharacter constants:\n");
-    printf("Character: %c\n", charConst);
-    printf("Escape sequence (newline): %d (ASCII value)\n", escapeConst);
-
-    printf("\nString constant:\n");
-    printf("%s\n", stringConst);
-
-    printf("\nEnumeration constant:\n");
-    printf("Today is day number: %d\n", today);
-
-    printf("\nMacro constant:\n");
-    printf("Value of PI: %f\n", PI);
-*/
-    // Displaying all constants
-    printf("Integer constants:\n");
-    printf("Decimal: %d\n", intConst);
-    printf("Hexadecimal: %d\n", hexConst);
-    printf("Octal: %d\n", octConst);
-
-    return 0;
+    default:
+        printf("Invalid option.\n");
+    }
 }
-
